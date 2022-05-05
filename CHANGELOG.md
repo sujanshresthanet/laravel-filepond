@@ -2,6 +2,13 @@
 
 All notable changes to `laravel-filepond` will be documented in this file.
 
+## 0.4.1 - 2022-05-05
+
+- Added custom `Rule::filepond()` to validate uploaded files. ✨
+- Added option to `getDataURL()` from file. Know more about the format [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs).
+- Readme updated with new validation example.
+
+
 ## 0.3.1 - 2021-12-31
 
 - Added support for chunk upload with resume capability. ✨
