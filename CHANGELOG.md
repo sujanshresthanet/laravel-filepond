@@ -2,6 +2,12 @@
 
 All notable changes to `laravel-filepond` will be documented in this file.
 
+## 0.5.3 - 2022-06-02
+
+- `Rule::filepond($rules)` Laravel 7 specific validation issue fixed.
+- `validate()` method deprication notice added.
+- Multiple file uploads sometime won't move to location fixed.
+
 ## 0.4.2 - 2022-05-07
 
 - `Rule::filepond($rules)` documentation added.

@@ -3,24 +3,20 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/rahulhaque/laravel-filepond.svg?style=flat-square)](https://packagist.org/packages/rahulhaque/laravel-filepond)
 [![Total Downloads](https://img.shields.io/packagist/dt/rahulhaque/laravel-filepond.svg?style=flat-square)](https://packagist.org/packages/rahulhaque/laravel-filepond)
 
-A straight forward backend support for Laravel application to work with [FilePond](https://pqina.nl/filepond/) file upload javascript library. This package keeps tracks of all the uploaded files and provides an easier interface for the user to interact with the files. It currently features - 
+A straight forward backend support for Laravel application to work with [FilePond](https://pqina.nl/filepond/) file upload javascript library. This package keeps tracks of all the uploaded files and provides an easier interface for the developers to interact with them. It currently features -
 
 - Single and multiple file uploads.
+- Chunk uploads with resume.
 - Third party storage support.
-- Chunk upload with upload resume capability.
 - Global server side validation for temporary files.
-- Controller level validation before moving the temporary files to permanent location.
-- Artisan command to clean up temporary files and folders after they have expired.
+- Controller/Request level validation before moving the temporary files to permanent location.
+- Scheduled artisan command to clean up temporary files and folders after they have expired.
+
+Support the development with a :star: to let others know it worked for you.
 
 **Attention:** People who are already using version less than < 0.2.1 are requested to update the `./config/filepond.php` file when upgrading as the newer version contains significant changes.
 
 ## Installation
-
-Install the package via composer:
-
-```bash
-composer require rahulhaque/laravel-filepond
-```
 
 Laravel 7 users use less than 1.x version.
 
@@ -223,11 +219,11 @@ This command takes a `--all` option which will truncate the `Filepond` model and
 
 Depricated method `validate()`. Will be removed in future. Use `Rule::filepond($rules)` for better validation management with other fields.
 
-#### Rule::filepond($rules)
+#### Rule::filepond($rules, $customMessages = [], $customAttributes = [])
 
 Use `Rule::filepond($rules)` inside Request class or directly in controller or in custom Validator to validate your filepond fields. See the example.
 
-> **Note:** This method will not work when third party storage is set as your temporary storage. The files are uploaded directly to your third party storage and not available locally for any further modification. Calling this method in such condition will throw error that the file is not found. 
+> **Note:** This method will not work when third party storage is set as your temporary storage. The files are uploaded directly to your third party storage and not available locally for any further modification. Calling this method in such condition will throw error that the file is not found.
 
 #### copyTo()
 
